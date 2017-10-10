@@ -1,0 +1,158 @@
+.fullpage {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative; }
+
+.logoHolder {
+  width: 20%; }
+  .logoHolder img {
+    width: 100%;
+    height: auto; }
+
+.hum {
+  position: absolute;
+  top: 2rem;
+  left: 3rem;
+  z-index: 7; }
+
+.searchBar {
+  -webkit-box-shadow: -1px 2px 48px -19px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 2px 48px -19px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 2px 48px -19px rgba(0, 0, 0, 0.75); }
+  .searchBar input {
+    border: none;
+    margin-bottom: 0;
+    height: 5rem; }
+
+.subTitle {
+  margin-top: 4rem; }
+
+.xCard {
+  width: 22rem;
+  height: 40rem;
+  margin: 2rem;
+  overflow: hidden;
+  display: inline-block;
+  border-radius: 10px;
+  -webkit-box-shadow: -1px 2px 48px -19px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 2px 48px -19px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 2px 48px -19px rgba(0, 0, 0, 0.75); }
+  .xCard .wrapper {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white; }
+  .xCard #pic1 {
+    background-image: url("../images/cs.jpg"); }
+  .xCard #pic2 {
+    background-image: url("../images/ee.jpg"); }
+  .xCard #pic3 {
+    background-image: url("../images/me.jpg"); }
+  .xCard #pic4 {
+    background-image: url("../images/ba.jpg"); }
+
+.imgHolder {
+  width: 100%;
+  height: 60%;
+  background-color: lightgray;
+  background-size: cover;
+  background-position: center; }
+
+.animPage {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .animPage .pageWrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; }
+
+.one-half {
+  width: 50%;
+  text-align: center;
+  font-size: 2.5rem;
+  color: white; }
+
+.leftFont {
+  text-align: left; }
+
+.rightFont {
+  text-align: right; }
+
+#pageContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: transparent;
+  z-index: 4; }
+  #pageContent .xCard {
+    width: 20rem;
+    height: 30rem;
+    background-color: white; }
+  #pageContent .subTitle {
+    margin-top: 0; }
+
+#pageThumbBG {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url("../images/ba.jpg");
+  background-size: cover;
+  background-position: center;
+  z-index: 2;
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px); }
+
+#coursePage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  overflow-y: auto;
+  background-color: white; }
+  #coursePage i {
+    color: black; }
+
+.inPic {
+  width: 100%;
+  height: 40%; }
+  .inPic img {
+    width: 100%;
+    height: auto; }
+
+#departmentPage,
+#coursePage {
+  display: none;
+  opacity: 0;
+  transition: all 0.2s linear; }
+
+#sliderNav {
+  width: 0%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background-color: white;
+  -webkit-box-shadow: -1px 2px 48px -19px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: -1px 2px 48px -19px rgba(0, 0, 0, 0.75);
+  box-shadow: -1px 2px 48px -19px rgba(0, 0, 0, 0.75);
+  transition: all 0.2s linear; }
+
+/*# sourceMappingURL=style.css.map */
