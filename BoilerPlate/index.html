@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>phonegap & jquery mobile boilerplate</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+
+    <link rel="stylesheet" href="css/jquery.mobile.structure.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.theme.css" />
+    <link rel="stylesheet" href='css/xybron.css' />
+
+    <script>
+        var userAgent = navigator.userAgent + '';
+        if (userAgent.indexOf('iPhone') > -1) {
+            document.write('<script src="js/lib/cordova-iphone.js"></sc' + 'ript>');
+            var mobile_system = 'iphone';
+        } else if (userAgent.indexOf('Android') > -1) {
+            document.write('<script src="js/lib/cordova-android.js"></sc' + 'ript>');
+            var mobile_system = 'android';
+        } else {
+            var mobile_system = '';
+        }
+    </script>
+
+    <script src="js/lib/jquery.js"></script>
+    <!-- your scripts here -->
+    <script src="js/app/app.js"></script>
+    <script src="js/app/bootstrap.js"></script>
+    <script src="js/lib/jquery.mobile.js"></script>
+
+</head>
+
+<body>
+
+    <section class='fullpage'>
+        <div class='row'>
+            <div class='logoHolder'>
+                <div class='wrapper'>
+                    <img src='css/images/logo.JPG'>
+                </div>
+            </div>
+        </div>
+        <div class='row'>
+            <p>Welcome To Ashesi</p>
+        </div>
+        <div class='row'>
+            <h3>Majors</h3>
+        </div>
+        <div class='row'>
+            <div class='slideCard'>
+                <div class='majorCard' id='cs'>
+                    <div class='wrapper'>
+                        <h1>CS</h1>
+                        <p>Computer Science</p>
+                    </div>
+
+                </div>
+                <div class='majorCard' id='mis'>
+                    <div class='wrapper'>
+                        <h1>MIS</h1>
+                        <p>Managament In Information Systems</p>
+                    </div>
+
+                </div>
+                <div class='majorCard' id='ee'>
+                    <div class='wrapper'>
+                        <h1>EE</h1>
+                        <p>Electrical Engineering</p>
+                    </div>
+
+                </div>
+                <div class='majorCard' id='me'>
+                    <div class='wrapper'>
+                        <h1>ME</h1>
+                        <p>Mechanical Engineering</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+</body>
+
+</html>
