@@ -1,0 +1,214 @@
+/**Xybron style 2017
+ *@author Ronald Nettey
+ *Creation Date : 16th October 2017
+ */
+
+//Fullscreen styles
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: white;
+}
+
+.fullscreen[data-fullFlow='no'] {
+    overflow: hidden;
+}
+
+.fullscreen[data-fullFlow='yes'] {
+    overflow: auto;
+}
+
+//End of fullscreen styles
+//Navigation
+.nav {
+    margin-top: 2rem;
+    color: #7F00FF;
+    display: flex;
+    justify-content: space-between;
+    i {
+        font-size: 3rem;
+    }
+}
+
+//end of nav
+//xHover style sets elems in the absolute position width default z-index as 0
+.xHover {
+    position: absolute !important;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}
+
+//end of xHover style
+//Default center style, horizontally aligned
+.center {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+
+//This style is to applied with one element as a child, usually a wrapper
+.center[data-centerChild='flexMiddle'] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//end of center styles
+//Logo Holder
+.logoHolder {
+    $dim: 100px;
+    width: $dim;
+    height: $dim;
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+//End of logo holder
+#bottomBtns {
+    position: absolute;
+    bottom: 2rem;
+    width: 100%
+}
+
+#xFabBtn {
+    $dim: 8rem;
+    width: $dim;
+    height: $dim;
+    border-radius: 400px;
+    color: white;
+    background: #7F00FF;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E100FF, #7F00FF);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-size: $dim - ($dim/2);
+    @extend .center[data-centerChild='flexMiddle'];
+    -webkit-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.5);
+    -moz-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.5);
+}
+
+#xFabBtn[data-shadow='yes'] {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    font-size: 2rem;
+    width: 80%;
+    p {
+        margin-bottom: 0;
+    }
+}
+
+//Adjustments
+#overlayWrapper {
+    z-index: 1;
+    visibility: hidden;
+    * {
+        visibility: visible;
+    }
+}
+
+#overlayNotifs {
+    z-index: 2;
+    display: none;
+}
+
+.profileHolder {
+    $dim: 8rem;
+    text-align: center;
+    margin: 0 auto;
+    @extend .logoHolder;
+    overflow: hidden;
+    border: 0.75rem solid white;
+    border-radius: 400px;
+    @extend .center[data-centerChild='flexMiddle'];
+    width: $dim;
+    height: $dim;
+}
+
+.locationDeets {
+    p {
+        margin-bottom: 0;
+    }
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 2rem;
+    animation-delay: 0.2s;
+}
+
+.cover {
+    width: 100%;
+    height: 100%;
+}
+
+#foundMeContainer {
+    // background-color: rgba(255, 255, 255, 0.5);
+    .profileHolder,
+    .locationDeets {
+        -webkit-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.4);
+        -moz-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.4);
+    }
+}
+
+#xFriends {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.75);
+    -webkit-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.2);
+}
+
+.friendsPane {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    position: relative;
+    .friend {
+        display: inline-block;
+        margin: 0 1.5rem;
+        text-align: center;
+        p {
+            margin-bottom: 0;
+        }
+        .profileHolder {
+            $dim: 5rem;
+            width: $dim;
+            height: $dim;
+            border: 0.2rem solid #7F00FF;
+        }
+    }
+}
+
+//end of adjustments
+.wrapper {
+    width: inherit;
+    height: inherit;
+}
+
+#mapWrapper {
+    /* background-image: url(../images/map.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: none;*/
+}
+
+#loader,
+#xFriends,
+#xFabBtn[data-shadow='yes'] {
+    display: none;
+}
+
+//Custom google marker
+//end of custom google marker
