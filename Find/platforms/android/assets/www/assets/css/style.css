@@ -1,0 +1,179 @@
+/**Xybron style 2017
+ *@author Ronald Nettey
+ *Creation Date : 16th October 2017
+ */
+.fullscreen {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: white; }
+
+.fullscreen[data-fullFlow='no'] {
+  overflow: hidden; }
+
+.fullscreen[data-fullFlow='yes'] {
+  overflow: auto; }
+
+.nav {
+  margin-top: 2rem;
+  color: #7F00FF;
+  display: flex;
+  justify-content: space-between; }
+  .nav i {
+    font-size: 3rem; }
+
+.xHover {
+  position: absolute !important;
+  height: 100%;
+  width: 100%;
+  z-index: 0; }
+
+.center {
+  display: block;
+  margin: 0 auto;
+  text-align: center; }
+
+.center[data-centerChild='flexMiddle'], #xFabBtn, .profileHolder {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.logoHolder, .profileHolder {
+  width: 100px;
+  height: 100px; }
+  .logoHolder img, .profileHolder img {
+    width: 100%;
+    height: auto; }
+
+#bottomBtns {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%; }
+
+#xFabBtn {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 400px;
+  color: white;
+  background: #7F00FF;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #E100FF, #7F00FF);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  font-size: 4rem;
+  -webkit-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.5);
+  transition: transform 0.7s ease-in-out; }
+  #xFabBtn:hover {
+    transform: scale(1.1); }
+
+#xFabBtn[data-shadow='yes'] {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  font-size: 2rem;
+  width: 80%; }
+  #xFabBtn[data-shadow='yes'] p {
+    margin-bottom: 0; }
+
+#overlayWrapper {
+  z-index: 1;
+  visibility: hidden; }
+  #overlayWrapper .container {
+    visibility: visible; }
+
+#overlayNotifs {
+  z-index: 2;
+  visibility: hidden; }
+
+#foundMeContainer {
+  display: none;
+  visibility: hidden; }
+  #foundMeContainer .centerVH_wrapper * {
+    visibility: visible; }
+
+.profileHolder {
+  text-align: center;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 0.75rem solid white;
+  border-radius: 400px;
+  width: 8rem;
+  height: 8rem; }
+
+.locationDeets {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 2rem;
+  border-radius: 1rem;
+  margin: 2rem;
+  animation-delay: 0.2s; }
+  .locationDeets p {
+    margin-bottom: 0; }
+
+.cover {
+  width: 100%;
+  height: 100%; }
+
+#foundMeContainer .profileHolder,
+#foundMeContainer .locationDeets {
+  -webkit-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.4); }
+
+#xFriends {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  opacity: 0;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.75);
+  -webkit-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 50px -14px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.4s linear; }
+
+.friendsPane {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  position: relative; }
+  .friendsPane .friend {
+    display: inline-block;
+    margin: 0 1.5rem;
+    text-align: center; }
+    .friendsPane .friend p {
+      margin-bottom: 0; }
+    .friendsPane .friend .profileHolder {
+      width: 5rem;
+      height: 5rem;
+      border: 0.2rem solid #7F00FF; }
+
+.wrapper {
+  width: inherit;
+  height: inherit; }
+
+#mapWrapper {
+  /* background-image: url(../images/map.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;*/ }
+
+#loader,
+#xFabBtn[data-shadow='yes'] {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s linear; }
+
+.showFriends {
+  opacity: 1 !important;
+  animation-name: slideInDown; }
+
+.hideFriends {
+  opacity: 0 !important;
+  animation-name: slideOutUp; }
+
+/*# sourceMappingURL=style.css.map */
