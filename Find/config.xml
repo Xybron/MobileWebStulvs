@@ -19,11 +19,10 @@
     
     <platform name="android">
         <allow-intent href="market:*" />
-        <icon src="res/icon/android/icon-36-ldpi.png"   gap:platform="android"    gap:qualifier="ldpi" />
-    <icon src="res/icon/android/icon-48-mdpi.png"   gap:platform="android"    gap:qualifier="mdpi" />
-    <icon src="res/icon/android/icon-72-hdpi.png"   gap:platform="android"    gap:qualifier="hdpi" />
-    <icon src="res/icon/android/icon-96-xhdpi.png"  gap:platform="android"    gap:qualifier="xhdpi" />
-
+        <icon density="ldpi" src="res/icon/android/icon/drawable-ldpi-icon.png" />
+        <icon density="mdpi" src="res/icon/android/icon/drawable-mdpi-icon.png" />
+        <icon density="hdpi" src="res/icon/android/icon/drawable-hdpi-icon.png" />
+        <icon density="xhdpi" src="res/icon/android/icon/drawable-xhdpi-icon.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
