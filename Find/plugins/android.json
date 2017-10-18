@@ -12,6 +12,9 @@
     },
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "org.apache.cordova.find"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "org.apache.cordova.find"
     }
   },
   "dependent_plugins": {

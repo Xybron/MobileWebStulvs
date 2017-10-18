@@ -187,7 +187,7 @@ function foundMePopUp(position) {
             map: map
         });
 
-    }, 2500);
+    }, 3000);
 }
 
 function viewFriends() {
