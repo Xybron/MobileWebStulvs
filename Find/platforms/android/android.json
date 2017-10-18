@@ -40,6 +40,9 @@
     }
   },
   "installed_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "org.apache.cordova.find"
+    },
     "cordova-plugin-geolocation": {
       "PACKAGE_NAME": "org.apache.cordova.find"
     },
@@ -50,22 +53,16 @@
   "dependent_plugins": {},
   "modules": [
     {
-      "id": "cordova-plugin-geolocation.geolocation",
       "file": "plugins/cordova-plugin-geolocation/www/android/geolocation.js",
-      "pluginId": "cordova-plugin-geolocation",
+      "id": "cordova-plugin-geolocation.geolocation",
       "clobbers": [
         "navigator.geolocation"
       ]
     },
     {
-      "id": "cordova-plugin-geolocation.PositionError",
       "file": "plugins/cordova-plugin-geolocation/www/PositionError.js",
-      "pluginId": "cordova-plugin-geolocation",
+      "id": "cordova-plugin-geolocation.PositionError",
       "runs": true
     }
-  ],
-  "plugin_metadata": {
-    "cordova-plugin-geolocation": "2.4.3",
-    "cordova-plugin-whitelist": "1.3.2"
-  }
+  ]
 }

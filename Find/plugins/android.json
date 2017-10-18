@@ -14,5 +14,9 @@
       "PACKAGE_NAME": "org.apache.cordova.find"
     }
   },
-  "dependent_plugins": {}
+  "dependent_plugins": {
+    "cordova-plugin-compat": {
+      "PACKAGE_NAME": "org.apache.cordova.find"
+    }
+  }
 }
