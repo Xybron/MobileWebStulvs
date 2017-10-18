@@ -4,6 +4,7 @@ var foundMeNotification = $('#foundMeContainer');
 var friendsBtn = $('#friendsBtn');
 var overlayWrapper = $('#overlayWrapper');
 var findMeBtn = $('#xFabBtn');
+var shadowBtn = $("#xFabBtn[data-shadow='yes']")
 
 
 var app = new Vue({
@@ -235,6 +236,10 @@ findMeBtn.click(() => {
     }, 500);
 
 
+});
+
+shadowBtn.click(() => {
+    this.foundMeorNot();
 });
 
 /*overlayWrapper.click(() => {
