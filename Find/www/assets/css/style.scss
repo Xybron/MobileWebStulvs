@@ -220,7 +220,11 @@
     background-repeat: none;*/
 }
 
-#loader,
+#loader {
+    z-index: 9;
+    background-color: white;
+}
+
 #xFabBtn[data-shadow='yes'] {
     opacity: 0;
     visibility: hidden;

@@ -5,6 +5,7 @@ var friendsBtn = $('#friendsBtn');
 var overlayWrapper = $('#overlayWrapper');
 var findMeBtn = $('#xFabBtn');
 var shadowBtn = $("#xFabBtn[data-shadow='yes']")
+var splashScreen = $('#loader');
 
 
 var app = new Vue({
@@ -19,6 +20,15 @@ var app = new Vue({
             { name: 'Bed' }
         ]
     }
+});
+
+
+$(document).ready(() => {
+
+    setTimeout(() => {
+        splashScreen.addClass('fadeOutLeftBig');
+    }, 1500);
+
 });
 
 
@@ -187,7 +197,7 @@ function foundMePopUp(position) {
             map: map
         });
 
-    }, 3000);
+    }, 3500);
 }
 
 function viewFriends() {
