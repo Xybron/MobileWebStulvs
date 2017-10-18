@@ -19,10 +19,10 @@
     
     <platform name="android">
         <allow-intent href="market:*" />
-        <icon density="ldpi" src="res/icon/android/icon/drawable-ldpi-icon.png" />
-        <icon density="mdpi" src="res/icon/android/icon/drawable-mdpi-icon.png" />
-        <icon density="hdpi" src="res/icon/android/icon/drawable-hdpi-icon.png" />
-        <icon density="xhdpi" src="res/icon/android/icon/drawable-xhdpi-icon.png" />
+        <icon density="ldpi" src="res/icon/android/drawable-ldpi-icon.png" />
+        <icon density="mdpi" src="res/icon/android/drawable-mdpi-icon.png" />
+        <icon density="hdpi" src="res/icon/android/drawable-hdpi-icon.png" />
+        <icon density="xhdpi" src="res/icon/android/drawable-xhdpi-icon.png" />
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
