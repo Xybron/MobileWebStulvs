@@ -207,6 +207,14 @@
     }
 }
 
+.slideDownPane {
+    text-align: center;
+    transition: opacity 0.7s linear;
+    h4 {
+        font-size: 3rem;
+    }
+}
+
 //end of adjustments
 .wrapper {
     width: inherit;

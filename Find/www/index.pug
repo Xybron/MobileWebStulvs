@@ -1,0 +1,65 @@
+
+
+doctype html
+html(lang = 'en')
+    head
+        title Find
+        link(rel = 'stylesheet', href = 'assets/css/normalize.css')
+        link(rel = 'stylesheet', href = 'assets/css/skeleton.css')
+        link(rel = 'stylesheet', href = 'assets/css/animate.css')
+        link(rel = 'stylesheet', href = 'assets/css/font-awesome.min.css')
+        link(rel = 'stylesheet', href = 'assets/css/style.css')
+        meta(name = 'author', content = 'Ronald Nettey')
+        meta(name = 'viewport', content = 'width = device-width, initial-scale = 1.0' )
+    body
+        section.fullscreen(data-fullFlow = 'no')
+            #loader.xHover.animated
+                .wrapper.center(data-centerChild = 'flexMiddle')
+                    .centerVH_wrapper
+                        .logoHolder.animated.pulse.infinite
+                            img(src = 'assets/images/logo.png')
+            #overlayNotifs.xHover
+                #foundMeContainer.cover
+                    .wrapper.center(data-centerChild = 'flexMiddle')
+                        .centerVH_wrapper
+                            .cotainer
+                                .profileHolder.animated.bounceInDown
+                                    img(src = 'assets/images/me.jpg')
+                                .locationDeets.animated.bounceInUp
+                                    p Ashesi University College
+                                
+            #overlayWrapper.xHover
+                .container
+                    .row.nav
+                        p(style = 'width : 100%')
+                            i.fa.fa-bars(aria-hidden="true")
+                        p#friendsBtn
+                            i.fa.fa-users(aria-hidden="true")
+                       
+                .container#friendSearch.hideFriends.slideDownPane.animated
+                    .row
+                        h4 Searching
+                        p Finding your friends
+
+                .container#xFriends.animated
+                    .row.friendsPane
+                        .friend(v-for = 'friend in friends')
+                            .profileHolder
+                                img(src = 'assets/images/profile_img.png')
+                            p {{friend.name}}
+
+                        
+                .container#bottomBtns
+                    .row
+                        #xFabBtn.center.animated(onclick = 'findMe()')
+                            i.fa.fa-dot-circle-o(aria-hidden="true")
+                        #xFabBtn.center(data-shadow = 'yes')
+                            p Looking for you..
+
+                        
+
+            #mapWrapper.fullscreen
+
+        include src/includes/scripts.pug
+
+    

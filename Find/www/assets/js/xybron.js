@@ -1,5 +1,6 @@
 //Global variables
 var map;
+var marker;
 var foundMeNotification = $('#foundMeContainer');
 var friendsBtn = $('#friendsBtn');
 var overlayWrapper = $('#overlayWrapper');
@@ -189,13 +190,18 @@ function foundMePopUp(position) {
         pH.addClass('bounceOutUp');
         lD.addClass('bounceOutDown');
 
-        //Creating the marker on the map.
-        var marker = new google.maps.Marker({
-            position: coordinates,
-            icon: 'assets/images/marker.png',
-            animation: google.maps.Animation.DROP,
-            map: map
-        });
+        if (marker) {
+            marker.setPosition(coordinates);
+        } else {
+            //Creating the marker on the map.
+            marker = new google.maps.Marker({
+                position: coordinates,
+                icon: 'assets/images/marker.png',
+                animation: google.maps.Animation.DROP,
+                map: map
+            });
+        }
+
 
     }, 3500);
 }
@@ -235,7 +241,8 @@ function foundMeorNot() {
 
 
 friendsBtn.click(() => {
-    this.slideInTopToggle('xFriends');
+    this.slideInTopToggle('friendSearch');
+    lookForFriends();
 });
 
 findMeBtn.click(() => {

@@ -152,6 +152,12 @@
       height: 5rem;
       border: 0.2rem solid #7F00FF; }
 
+.slideDownPane {
+  text-align: center;
+  transition: opacity 0.7s linear; }
+  .slideDownPane h4 {
+    font-size: 3rem; }
+
 .wrapper {
   width: inherit;
   height: inherit; }
