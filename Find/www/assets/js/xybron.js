@@ -200,21 +200,23 @@ function foundMePopUp(position) {
     }, 3500);
 }
 
-function viewFriends() {
-    var friendsPane = $('#xFriends');
+function slideInTopToggle(elem) {
+
+    var e = `#${elem}`
+    var pane = $(e);
 
 
-    if (friendsPane.hasClass('showFriends')) {
-        friendsPane.removeClass('showFriends');
-        friendsPane.addClass('hideFriends');
+    if (pane.hasClass('showFriends')) {
+        pane.removeClass('showFriends');
+        pane.addClass('hideFriends');
 
 
-    } else if (friendsPane.hasClass('hideFriends')) {
-        friendsPane.removeClass('hideFriends');
-        friendsPane.addClass('showFriends');
+    } else if (pane.hasClass('hideFriends')) {
+        pane.removeClass('hideFriends');
+        pane.addClass('showFriends');
     } else {
 
-        friendsPane.addClass('showFriends');
+        pane.addClass('showFriends');
 
     }
 }
@@ -233,7 +235,7 @@ function foundMeorNot() {
 
 
 friendsBtn.click(() => {
-    this.viewFriends();
+    this.slideInTopToggle('xFriends');
 });
 
 findMeBtn.click(() => {
