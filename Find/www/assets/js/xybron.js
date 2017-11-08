@@ -25,6 +25,8 @@ var app = new Vue({
 
 
 $(document).ready(() => {
+    //Sets all false
+    setDefault();
 
     setTimeout(() => {
         splashScreen.addClass('fadeOutLeftBig');
@@ -215,14 +217,17 @@ function slideInTopToggle(elem) {
     if (pane.hasClass('showFriends')) {
         pane.removeClass('showFriends');
         pane.addClass('hideFriends');
+        stopLooking()
 
 
     } else if (pane.hasClass('hideFriends')) {
         pane.removeClass('hideFriends');
         pane.addClass('showFriends');
+        lookForFriends();
     } else {
 
         pane.addClass('showFriends');
+        lookForFriends();
 
     }
 }
@@ -242,7 +247,8 @@ function foundMeorNot() {
 
 friendsBtn.click(() => {
     this.slideInTopToggle('friendSearch');
-    lookForFriends();
+    checkIfRequestIsAccepted();
+
 });
 
 findMeBtn.click(() => {

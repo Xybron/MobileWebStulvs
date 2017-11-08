@@ -11,7 +11,7 @@
 importedFirebaseScript.src = 'https://www.gstatic.com/firebasejs/4.6.0/firebase.js';
 document.body.appendChild(importedFirebaseScript);*/
 
-
+alert();
 
 
 var findDatabaseRef;
@@ -32,12 +32,13 @@ firebase.initializeApp(config);
 findDatabaseRef = firebase.database().ref();
 
 function checkFriendSearch() {
-    var status = findDatabaseRef.child('findApp/isSearching');
+    var status = findDatabaseRef.child('findApp');
 
     status.on('value', function(snapshot) {
 
         if (snapshot.val().isSearching) {
             console.log('Ronald Wants your location');
+            showConfirmationDialogue();
         } else {
             console.log('Ronald is not looking for anybody');
         }
@@ -47,12 +48,12 @@ function checkFriendSearch() {
 }
 
 function lookForFriends() {
-    var status = findDatabaseRef.child('findApp/isSearching');
+    var status = findDatabaseRef.child('findApp');
     status.update({ isSearching: true })
 }
 
 function stopLooking() {
-    var status = findDatabaseRef.child('findApp/isSearching');
+    var status = findDatabaseRef.child('findApp');
     status.update({ isSearching: false })
 }
 
@@ -60,16 +61,17 @@ function stopLooking() {
 function acceptLocationRequest() {
     var status = findDatabaseRef.child('findApp');
     status.update({ accepted: true });
-
+    sendLocation();
+    /*
     status.on('value', function(snapshot) {
 
         if (snapshot.val().accepted) {
-            sendLocation();
+            
         } else {
             console.log('User denied your request');
         }
 
-    });
+    });*/
 }
 
 
@@ -83,6 +85,17 @@ function sendLocation() {
     var latitude = 0.19;
     var longitude = 0.32;
     var coordinates = { lat: latitude, lng: longitude };
-    var status = findDatabaseRef.child('findApp/friend');
-    status.update({ location: coordinates });
+    var statusi = findDatabaseRef.child('findApp/friend');
+    statusi.update({ location: coordinates });
+}
+
+
+function showConfirmationDialogue() {
+    var confirmation = confirm('Ronald wants to know where you are.\nAllow him?');
+
+    if (confirmation == true) {
+        acceptLocationRequest();
+    } else {
+        denyLocationRequest();
+    }
 }

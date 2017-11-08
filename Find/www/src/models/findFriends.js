@@ -17,6 +17,7 @@ document.body.appendChild(importedFirebaseScript);*/
 var findDatabaseRef;
 
 
+
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyDp9p4SnCJwTceH0LAZlnUbgfqEFdDFrGw",
@@ -31,8 +32,10 @@ firebase.initializeApp(config);
 //Database ref
 findDatabaseRef = firebase.database().ref();
 
+
+
 function checkFriendSearch() {
-    var status = findDatabaseRef.child('findApp/isSearching');
+    var status = findDatabaseRef.child('findApp');
 
     status.on('value', function(snapshot) {
 
@@ -47,12 +50,12 @@ function checkFriendSearch() {
 }
 
 function lookForFriends() {
-    var status = findDatabaseRef.child('findApp/isSearching');
+    var status = findDatabaseRef.child('findApp');
     status.update({ isSearching: true })
 }
 
 function stopLooking() {
-    var status = findDatabaseRef.child('findApp/isSearching');
+    var status = findDatabaseRef.child('findApp');
     status.update({ isSearching: false })
 }
 
@@ -85,4 +88,56 @@ function sendLocation() {
     var coordinates = { lat: latitude, lng: longitude };
     var status = findDatabaseRef.child('findApp/friend');
     status.update({ location: coordinates });
+}
+
+
+function checkIfRequestIsAccepted() {
+    var statusi = findDatabaseRef.child('findApp');
+
+    statusi.on('value', function(snapshot) {
+
+        if (snapshot.val().accepted) {
+            this.slideInTopToggleNormal('friendSearch');
+            console.log(snapshot.val().friend.location);
+        } else {
+            setTimeout(() => {
+                this.slideInTopToggleNormal('friendSearch');
+            }, 10000);
+        }
+
+    });
+}
+
+function slideInTopToggleNormal(elem) {
+
+    var e = `#${elem}`
+    var pane = $(e);
+
+
+    if (pane.hasClass('showFriends')) {
+        pane.removeClass('showFriends');
+        pane.addClass('hideFriends');
+        stopLooking();
+
+
+    } else if (pane.hasClass('hideFriends')) {
+        pane.removeClass('hideFriends');
+        pane.addClass('showFriends');
+
+    } else {
+
+        pane.addClass('showFriends');
+
+
+    }
+}
+
+function setDefault() {
+    var latitude = 0;
+    var longitude = 0;
+    var coordinates = { lat: latitude, lng: longitude };
+    var status = findDatabaseRef.child('findApp');
+    status.update({ isSearching: false, accepted: false });
+    findDatabaseRef.child('findApp/friend').update({ location: coordinates });
+
 }
